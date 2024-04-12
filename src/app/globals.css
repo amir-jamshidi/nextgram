@@ -2,32 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: 'morabba';
+    src: url('../assets/fonts/mo-medium.woff');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+    font-family: 'morabba-bold';
+    src: url('../assets/fonts/mo-bold.woff');
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+    font-family: 'morabba-light';
+    src: url('../assets/fonts/mo-light.woff');
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@font-face {
+    font-family: 'dana';
+    src: url('../assets/fonts/dana-medium.ttf');
+}
+
+@font-face {
+    font-family: 'dana-bold';
+    src: url('../assets/fonts/dana-demi-bold.ttf');
+}
+
+* {
+    font-family: 'morabba';
+}
+
+.full-s {
+    height: calc(100vh - 120px);
+
+}
+
+.pattern {
+    opacity: 0.1;
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/p.png');
+    background-repeat: repeat;
+    background-size: 350px;
+    background-clip: content-box;
+}
+
+.bg-filter {
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 30px;
+    font-weight: bold;
+}
+
+.bg-color {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500
+}
+
+.bg-error {
+    @apply bg-gradient-to-r from-red-500 to-orange-500
+}
+
+.bg-color:hover {
+    @apply bg-gradient-to-r from-cyan-600 to-blue-600
 }
